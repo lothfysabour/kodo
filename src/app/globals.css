@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-black text-white font-inter antialiased;
+  position: relative;
+}
+
+body::before {
+  content: '香 道 源 芳 香 水 艺 术 感 官 记 忆 情 感 纯 粹 优 雅 奢 华 精 致 传 统 现 代 和 谐 平 衡 美 学 诗 意 永 恒 香 道 源 芳 香 水 艺 术 感 官 记 忆 情 感 纯 粹 优 雅';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 120px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-align: center;
+  padding: 2rem;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+
