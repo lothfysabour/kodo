@@ -14,22 +14,27 @@ body {
 }
 
 body::before {
-  content: '香 道 源 芳 香 水 艺 术 感 官 记 忆 情 感 纯 粹 优 雅 奢 华 精 致 传 统 现 代 和 谐 平 衡 美 学 诗 意 永 恒 香 道 源 芳 香 水 艺 术 感 官 记 忆 情 感 纯 粹 优 雅';
+  content: '香道 芳香 水艺 术感 官记 忆情 感纯 粹优 雅奢 华精 致传 统现 代和 谐平 衡美 学诗 意永 恒香 道芳 香水 艺术 感官 记忆 情感 纯粹 优雅 奢华 精致 传统 现代 和谐 平衡 美学 诗意 永恒 香道 芳香 水艺 术感 官记 忆情 感纯 粹优 雅奢 华精 致传 统现 代和 谐平 衡美 学诗 意永 恒';
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  font-size: 120px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.02);
+  width: 100%;
+  height: 100%;
+  font-size: 140px;
+  line-height: 1.6;
+  letter-spacing: 0.3em;
+  color: rgba(255, 255, 255, 0.06);
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
   word-wrap: break-word;
-  text-align: center;
-  padding: 2rem;
+  text-align: justify;
+  padding: 4rem 2rem;
   user-select: none;
+  font-family: serif;
+  font-weight: 100;
 }
 
 html {
