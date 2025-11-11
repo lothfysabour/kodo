@@ -22,7 +22,7 @@ export default function Home() {
               Dans le silence des sens, une essence murmure.
             </p>
             <p className="text-base md:text-lg leading-relaxed text-white/70">
-              KŌDŌ puise dans l'art millénaire de la parfumerie pour créer des compositions olfactives uniques, 
+              KŌDŌ puise dans l&apos;art millénaire de la parfumerie pour créer des compositions olfactives uniques, 
               où chaque flacon devient un voyage sensoriel, une émotion suspendue dans le temps.
             </p>
           </div>
@@ -48,7 +48,7 @@ export default function Home() {
             </div>
             <h3 className="font-playfair text-2xl text-white">Artisanal</h3>
             <p className="text-sm text-white/70 leading-relaxed">
-              Chaque parfum est élaboré à la main avec des matières premières d'exception.
+              Chaque parfum est élaboré à la main avec des matières premières d&apos;exception.
             </p>
           </div>
 

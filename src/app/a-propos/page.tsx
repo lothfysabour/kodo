@@ -8,7 +8,7 @@ export default function AProposPage() {
             À Propos
           </h1>
           <p className="font-playfair text-xl text-gold italic">
-            L'art olfactif comme philosophie
+            L&apos;art olfactif comme philosophie
           </p>
         </div>
       </section>
@@ -23,8 +23,8 @@ export default function AProposPage() {
           <div className="space-y-4 text-lg leading-relaxed text-white/80">
             <p>
               KŌDŌ puise son nom dans la tradition japonaise du <em>Kōdō</em> (香道), 
-              l'art ancestral de « l'écoute de l'encens ». Plus qu'une simple pratique, 
-              c'est une cérémonie méditative où les fragrances deviennent un langage de l'âme.
+              l&apos;art ancestral de &laquo; l&apos;écoute de l&apos;encens &raquo;. Plus qu&apos;une simple pratique, 
+              c&apos;est une cérémonie méditative où les fragrances deviennent un langage de l&apos;âme.
             </p>
             <p>
               Nous transposons cet héritage dans la parfumerie contemporaine : 
@@ -42,18 +42,18 @@ export default function AProposPage() {
         {/* L'artisanat */}
         <div className="space-y-6">
           <h2 className="font-playfair text-3xl md:text-4xl text-center text-white">
-            L'Artisanat Olfactif
+            L&apos;Artisanat Olfactif
           </h2>
           <div className="space-y-4 text-lg leading-relaxed text-white/80">
             <p>
-              Dans nos ateliers, chaque parfum naît d'une recherche minutieuse et d'un savoir-faire artisanal. 
-              Nous sélectionnons avec exigence des matières premières d'exception : 
+              Dans nos ateliers, chaque parfum naît d&apos;une recherche minutieuse et d&apos;un savoir-faire artisanal. 
+              Nous sélectionnons avec exigence des matières premières d&apos;exception : 
               oléorésines rares, absolues précieuses, essences naturelles de haute qualité.
             </p>
             <p>
               Nos compositions sont élaborées en petites séries, 
               garantissant une qualité irréprochable et une authenticité sans compromis. 
-              Chaque flacon est un fragment d'émotion, une source olfactive qui révèle 
+              Chaque flacon est un fragment d&apos;émotion, une source olfactive qui révèle 
               la beauté des contrastes : force et douceur, tradition et modernité, 
               simplicité et profondeur.
             </p>
@@ -73,14 +73,14 @@ export default function AProposPage() {
           <div className="space-y-4 text-lg leading-relaxed text-white/80">
             <p>
               KŌDŌ incarne une vision épurée de la parfumerie de luxe. 
-              Nous refusons l'ostentation et privilégions l'essentiel : 
+              Nous refusons l&apos;ostentation et privilégions l&apos;essentiel : 
               des accords olfactifs justes, des notes équilibrées, 
               une signature discrète mais mémorable.
             </p>
             <p>
               Chaque parfum est une invitation à ralentir, à ressentir, 
               à se reconnecter avec ses émotions les plus intimes. 
-              C'est cette quête de pureté et d'authenticité qui guide 
+              C&apos;est cette quête de pureté et d&apos;authenticité qui guide 
               chacune de nos créations, transformant le parfum en une 
               expérience méditative et intemporelle.
             </p>
@@ -90,7 +90,7 @@ export default function AProposPage() {
         {/* Citation finale */}
         <div className="pt-12 text-center">
           <p className="font-playfair text-2xl md:text-3xl italic text-gold">
-            "Sentir, c'est se souvenir de ce qui n'a pas encore eu lieu."
+            &ldquo;Sentir, c&apos;est se souvenir de ce qui n&apos;a pas encore eu lieu.&rdquo;
           </p>
         </div>
       </section>

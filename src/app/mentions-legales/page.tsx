@@ -37,7 +37,7 @@ export default function MentionsLegalesPage() {
             <div className="space-y-3">
               <h2 className="font-playfair text-2xl text-white">Propriété intellectuelle</h2>
               <p>
-                L'ensemble des contenus présents sur ce site (textes, images, marques, logos) 
+                L&apos;ensemble des contenus présents sur ce site (textes, images, marques, logos) 
                 sont la propriété exclusive de KŌDŌ et sont protégés par les lois relatives 
                 à la propriété intellectuelle. Toute reproduction, même partielle, est strictement interdite 
                 sans autorisation préalable.
@@ -48,7 +48,7 @@ export default function MentionsLegalesPage() {
               <h2 className="font-playfair text-2xl text-white">Données personnelles</h2>
               <p>
                 Ce site ne collecte aucune donnée personnelle. 
-                Aucun cookie de tracking n'est utilisé.
+                Aucun cookie de tracking n&apos;est utilisé.
               </p>
             </div>
           </div>

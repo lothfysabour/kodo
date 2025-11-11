@@ -45,7 +45,7 @@ export default function ParfumCard({ parfum }: ParfumCardProps) {
 
         {/* Description */}
         <p className="text-sm md:text-base text-center text-white/70 leading-relaxed italic">
-          "{parfum.description}"
+          &ldquo;{parfum.description}&rdquo;
         </p>
       </div>
     </article>
