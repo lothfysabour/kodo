@@ -11,7 +11,7 @@ export default function ParfumsPage() {
             Nos Parfums
           </h1>
           <p className="text-lg text-white/70 leading-relaxed">
-            Trois créations olfactives qui incarnent l&apos;essence de KŌDŌ : 
+            Quatre créations olfactives qui incarnent l&apos;essence de KŌDŌ : 
             pureté, émotion et raffinement absolu.
           </p>
         </div>
@@ -19,7 +19,7 @@ export default function ParfumsPage() {
 
       {/* Grille de parfums */}
       <section className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-12">
           {parfums.map((parfum) => (
             <ParfumCard key={parfum.id} parfum={parfum} />
           ))}

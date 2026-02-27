@@ -1,5 +1,6 @@
 import { Parfum } from '@/data/parfums'
-import Image from 'next/image'
+import Carousel from './Carousel'
+import Link from 'next/link'
 
 interface ParfumCardProps {
   parfum: Parfum
@@ -7,17 +8,10 @@ interface ParfumCardProps {
 
 export default function ParfumCard({ parfum }: ParfumCardProps) {
   return (
-    <article className="group bg-black border border-white/20 hover:border-gold transition-all duration-500 overflow-hidden">
-      {/* Image */}
-      <div className="relative h-80 md:h-96 bg-black overflow-hidden flex items-center justify-center">
-        <Image
-          src={parfum.image}
-          alt={parfum.name}
-          fill
-          className="object-contain p-8 transition-all duration-500 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div>
+    <Link href={`/parfums/${parfum.id}`}>
+      <article className="group bg-black border border-white/20 hover:border-gold transition-all duration-500 overflow-hidden cursor-pointer">
+        {/* Carousel d'images */}
+        <Carousel images={parfum.images} alt={parfum.name} />
 
       {/* Contenu */}
       <div className="p-8 space-y-6">
@@ -25,6 +19,15 @@ export default function ParfumCard({ parfum }: ParfumCardProps) {
         <h3 className="font-playfair text-2xl md:text-3xl tracking-wide text-center text-white">
           {parfum.name}
         </h3>
+
+        {/* Prix */}
+        <div className="flex items-center justify-center gap-2">
+          <div className="h-px w-8 bg-gold/50"></div>
+          <p className="text-xl md:text-2xl font-light text-gold tracking-wider">
+            {parfum.price} €
+          </p>
+          <div className="h-px w-8 bg-gold/50"></div>
+        </div>
 
         {/* Notes */}
         <div className="space-y-2">
@@ -47,8 +50,16 @@ export default function ParfumCard({ parfum }: ParfumCardProps) {
         <p className="text-sm md:text-base text-center text-white/70 leading-relaxed italic">
           &ldquo;{parfum.description}&rdquo;
         </p>
+
+        {/* Call to action */}
+        <div className="text-center pt-2">
+          <span className="text-xs text-gold/70 group-hover:text-gold uppercase tracking-widest transition-colors">
+            Voir les détails →
+          </span>
+        </div>
       </div>
-    </article>
+      </article>
+    </Link>
   )
 }
 
