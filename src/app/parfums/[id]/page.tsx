@@ -149,7 +149,7 @@ export default function ParfumDetailPage({ params }: ParfumDetailPageProps) {
               </p>
               {[
                 { label: 'Contenance', value: '100ml' },
-                { label: 'Concentration', value: 'Eau de Parfum' },
+                { label: 'Concentration', value: 'Extrait de Parfum' },
                 { label: 'Fabrication', value: 'Artisanale' },
               ].map(({ label, value }) => (
                 <div key={label} className="flex justify-between border-b border-brand-brown/10 pb-3">
