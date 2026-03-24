@@ -53,30 +53,46 @@ export default function Home() {
       <section className="py-24 px-6 border-t border-brand-brown/10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
 
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 mx-auto border border-brand-brown/20 flex items-center justify-center">
-              <span className="text-xl text-brand-brown/60">✦</span>
-            </div>
+          <div className="text-center space-y-5">
+            <svg viewBox="0 0 48 48" className="w-10 h-10 mx-auto" fill="none">
+              <path
+                d="M24 4 C24 4 14 14 14 24 C14 34 24 44 24 44 C24 44 34 34 34 24 C34 14 24 4 24 4 Z"
+                fill="#D4AF37" fillOpacity="0.85"
+              />
+              <path
+                d="M4 24 C4 24 14 14 24 14 C34 14 44 24 44 24 C44 24 34 34 24 34 C14 34 4 24 4 24 Z"
+                fill="#D4AF37" fillOpacity="0.5"
+              />
+            </svg>
             <h3 className="font-alliance text-sm tracking-[0.2em] uppercase text-brand-brown">Artisanal</h3>
             <p className="font-alliance text-sm text-brand-brown/60 leading-relaxed">
               Chaque parfum est élaboré à la main avec des matières premières d&apos;exception.
             </p>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 mx-auto border border-brand-brown/20 flex items-center justify-center">
-              <span className="text-xl text-brand-brown/60">◈</span>
-            </div>
+          <div className="text-center space-y-5">
+            <svg viewBox="0 0 48 48" className="w-10 h-10 mx-auto" fill="none">
+              <circle cx="24" cy="24" r="18" fill="#D4AF37" fillOpacity="0.25" />
+              <circle cx="24" cy="24" r="10" fill="#D4AF37" fillOpacity="0.55" />
+              <circle cx="24" cy="24" r="4"  fill="#D4AF37" fillOpacity="1" />
+            </svg>
             <h3 className="font-alliance text-sm tracking-[0.2em] uppercase text-brand-brown">Sensoriel</h3>
             <p className="font-alliance text-sm text-brand-brown/60 leading-relaxed">
               Des compositions olfactives qui éveillent les émotions et racontent une histoire.
             </p>
           </div>
 
-          <div className="text-center space-y-4">
-            <div className="w-16 h-16 mx-auto border border-brand-brown/20 flex items-center justify-center">
-              <span className="text-xl text-brand-brown/60">◆</span>
-            </div>
+          <div className="text-center space-y-5">
+            <svg viewBox="0 0 48 48" className="w-10 h-10 mx-auto" fill="none">
+              <path
+                d="M24 4 L28 20 L44 24 L28 28 L24 44 L20 28 L4 24 L20 20 Z"
+                fill="#D4AF37" fillOpacity="0.35"
+              />
+              <path
+                d="M24 13 L26.8 21.5 L36 24 L26.8 26.5 L24 35 L21.2 26.5 L12 24 L21.2 21.5 Z"
+                fill="#D4AF37" fillOpacity="1"
+              />
+            </svg>
             <h3 className="font-alliance text-sm tracking-[0.2em] uppercase text-brand-brown">Intemporel</h3>
             <p className="font-alliance text-sm text-brand-brown/60 leading-relaxed">
               Des fragrances épurées qui transcendent les modes et traversent le temps.

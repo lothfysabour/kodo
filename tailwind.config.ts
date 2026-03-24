@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         'brand-beige': '#F4E9D2',
         'brand-brown': '#4E3034',
+        'gold':        '#D4AF37',
       },
       fontFamily: {
         fino:     ['Fino Sans', 'Playfair Display', 'Georgia', 'serif'],
