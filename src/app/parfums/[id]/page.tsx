@@ -1,6 +1,7 @@
 import { parfums } from '@/data/parfums'
 import { notFound } from 'next/navigation'
 import Carousel from '@/components/Carousel'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface ParfumDetailPageProps {
@@ -10,141 +11,178 @@ interface ParfumDetailPageProps {
 }
 
 export function generateStaticParams() {
-  return parfums.map((parfum) => ({
-    id: parfum.id,
-  }))
+  return parfums.map((parfum) => ({ id: parfum.id }))
 }
 
 export default function ParfumDetailPage({ params }: ParfumDetailPageProps) {
   const parfum = parfums.find((p) => p.id === params.id)
-
-  if (!parfum) {
-    notFound()
-  }
+  if (!parfum) notFound()
 
   return (
     <div className="pt-24 pb-24">
-      {/* Bouton retour */}
-      <div className="max-w-7xl mx-auto px-6 mb-8">
+
+      {/* Retour */}
+      <div className="max-w-7xl mx-auto px-6 mb-10">
         <Link
           href="/parfums"
-          className="inline-flex items-center gap-2 text-white/70 hover:text-gold transition-colors duration-300"
+          className="inline-flex items-center gap-2 font-alliance text-sm text-brand-brown/50 hover:text-brand-brown transition-colors duration-300"
         >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Retour aux parfums
+          Retour à la collection KŌDŌ
         </Link>
       </div>
 
       {/* Contenu principal */}
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Carousel d'images avec zoom */}
-          <div className="bg-black border border-white/20 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+          {/* Carousel */}
+          <div className="border border-brand-brown/15 overflow-hidden">
             <Carousel images={parfum.images} alt={parfum.name} enableZoom={true} fullSize={true} />
           </div>
 
           {/* Informations */}
-          <div className="space-y-8">
-            {/* Nom */}
-            <div className="space-y-4">
-              <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl tracking-wide text-white">
+          <div className="space-y-8 lg:pt-4">
+
+            {/* Gamme + Nom */}
+            <div className="space-y-3">
+              <p className="font-alliance text-xs tracking-[0.3em] uppercase text-brand-brown/40">
+                Les sources olfactives — KŌDŌ
+              </p>
+              <h1 className="font-fino text-4xl md:text-5xl lg:text-6xl tracking-widest text-brand-brown">
                 {parfum.name}
               </h1>
-              
+
               {/* Prix */}
-              <div className="flex items-center gap-3">
-                <div className="h-px w-12 bg-gold/50"></div>
-                <p className="text-3xl md:text-4xl font-light text-gold tracking-wider">
+              <div className="flex items-center gap-4 pt-2">
+                <div className="h-px w-10 bg-brand-brown/30"></div>
+                <p className="font-alliance text-3xl font-light text-brand-brown tracking-wider">
                   {parfum.price} €
                 </p>
-                <div className="h-px flex-1 bg-gold/50"></div>
+                <div className="h-px flex-1 bg-brand-brown/30"></div>
               </div>
             </div>
 
+            {/* Séparateur */}
+            <div className="h-px bg-brand-brown/10"></div>
+
             {/* Description */}
-            <div className="space-y-4">
-              <h2 className="text-xs tracking-widest uppercase text-white/50">
+            <div className="space-y-3">
+              <p className="font-alliance text-xs tracking-[0.25em] uppercase text-brand-brown/40">
                 Description
-              </h2>
-              <p className="text-lg md:text-xl text-white/80 leading-relaxed italic">
+              </p>
+              <p className="font-alliance text-lg text-brand-brown/75 leading-relaxed italic">
                 &ldquo;{parfum.description}&rdquo;
               </p>
             </div>
 
             {/* Séparateur */}
-            <div className="h-px bg-white/10"></div>
+            <div className="h-px bg-brand-brown/10"></div>
 
-            {/* Notes olfactives */}
-            <div className="space-y-4">
-              <h2 className="text-xs tracking-widest uppercase text-white/50">
-                Notes principales
-              </h2>
-              <div className="flex flex-wrap gap-3">
-                {parfum.notes.map((note, index) => (
-                  <span
-                    key={index}
-                    className="text-base px-4 py-2 bg-white/10 text-white/70 rounded-full border border-white/20 hover:border-gold transition-colors duration-300"
-                  >
-                    {note}
+            {/* Pyramide olfactive */}
+            <div className="space-y-5">
+              <p className="font-alliance text-xs tracking-[0.25em] uppercase text-brand-brown/40">
+                Pyramide olfactive
+              </p>
+
+              {/* Note de tête */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <span className="font-alliance text-xs tracking-[0.15em] uppercase text-brand-brown/40 w-24 shrink-0">
+                    Tête
                   </span>
-                ))}
+                  <div className="h-px flex-1 bg-brand-brown/10" />
+                </div>
+                <div className="flex flex-wrap gap-2 pl-0">
+                  {parfum.pyramide.tete.map((note, i) => (
+                    <span key={i} className="font-alliance text-sm px-3 py-1.5 border border-brand-brown/20 text-brand-brown/70 hover:border-brand-brown/50 transition-colors duration-300">
+                      {note}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Note de cœur */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <span className="font-alliance text-xs tracking-[0.15em] uppercase text-brand-brown/40 w-24 shrink-0">
+                    Cœur
+                  </span>
+                  <div className="h-px flex-1 bg-brand-brown/10" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {parfum.pyramide.coeur.map((note, i) => (
+                    <span key={i} className="font-alliance text-sm px-3 py-1.5 border border-brand-brown/30 bg-brand-brown/5 text-brand-brown/80 hover:border-brand-brown/60 transition-colors duration-300">
+                      {note}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Note de fond */}
+              <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <span className="font-alliance text-xs tracking-[0.15em] uppercase text-brand-brown/40 w-24 shrink-0">
+                    Fond
+                  </span>
+                  <div className="h-px flex-1 bg-brand-brown/10" />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {parfum.pyramide.fond.map((note, i) => (
+                    <span key={i} className="font-alliance text-sm px-3 py-1.5 border border-brand-brown/40 bg-brand-brown/10 text-brand-brown hover:border-brand-brown transition-colors duration-300">
+                      {note}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Séparateur */}
-            <div className="h-px bg-white/10"></div>
+            <div className="h-px bg-brand-brown/10"></div>
 
-            {/* Informations supplémentaires */}
-            <div className="space-y-4 text-sm text-white/60">
-              <div className="flex justify-between">
-                <span>Contenance</span>
-                <span className="text-white/80">100ml</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Concentration</span>
-                <span className="text-white/80">Eau de Parfum</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Fabrication</span>
-                <span className="text-white/80">Artisanale</span>
-              </div>
+            {/* Fiche produit */}
+            <div className="space-y-3 font-alliance text-sm">
+              <p className="text-xs tracking-[0.25em] uppercase text-brand-brown/40 mb-4">
+                Fiche produit
+              </p>
+              {[
+                { label: 'Contenance', value: '100ml' },
+                { label: 'Concentration', value: 'Eau de Parfum' },
+                { label: 'Fabrication', value: 'Artisanale' },
+              ].map(({ label, value }) => (
+                <div key={label} className="flex justify-between border-b border-brand-brown/10 pb-3">
+                  <span className="text-brand-brown/50">{label}</span>
+                  <span className="text-brand-brown">{value}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Note sur les images */}
-            <div className="pt-4 text-xs text-white/40 italic">
-              💡 Cliquez sur les images pour les agrandir
-            </div>
+            <p className="font-alliance text-xs text-brand-brown/35 italic">
+              Cliquez sur les images pour les agrandir
+            </p>
           </div>
         </div>
 
-        {/* Galerie complète en bas */}
+        {/* Galerie */}
         {parfum.images.length > 1 && (
-          <div className="mt-16 pt-16 border-t border-white/10">
-            <h2 className="text-2xl font-playfair text-white text-center mb-8">
+          <div className="mt-20 pt-16 border-t border-brand-brown/10">
+            <p className="font-alliance text-xs tracking-[0.3em] uppercase text-brand-brown/40 text-center mb-8">
               Galerie complète
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {parfum.images.map((image, index) => (
                 <div
                   key={index}
-                  className="relative aspect-square bg-black border border-white/20 hover:border-gold transition-all duration-300 overflow-hidden group cursor-pointer"
+                  className="relative aspect-square border border-brand-brown/15 hover:border-brand-brown/40 transition-all duration-300 overflow-hidden group cursor-pointer"
                 >
-                  <img
+                  <Image
                     src={image}
-                    alt={`${parfum.name} - ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    alt={`${parfum.name} — ${index + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
               ))}

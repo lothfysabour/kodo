@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ──────────────────────────────────────────────
+   Polices locales
+   Placez les fichiers dans public/fonts/ :
+   - fino-sans-regular.woff2
+   - alliance-no2-regular.woff2
+────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Fino Sans';
+  src: url('/fonts/fino-sans-regular.woff2') format('woff2'),
+       url('/fonts/fino-sans-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alliance No2';
+  src: url('/fonts/alliance-no2-regular.woff2') format('woff2'),
+       url('/fonts/alliance-no2-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ──────────────────────────────────────────────
+   Base
+────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +36,17 @@
 }
 
 body {
-  @apply bg-black text-white font-inter antialiased;
+  background-color: #F4E9D2;
+  color: #4E3034;
+  font-family: 'Alliance No2', 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: relative;
 }
 
+/* ──────────────────────────────────────────────
+   Caractères japonais en fond
+────────────────────────────────────────────── */
 body::before {
   content: '香道 芳香 水艺 术感 官记 忆情 感纯 粹优 雅奢 华精 致传 统现 代和 谐平 衡美 学诗 意永 恒香 道芳 香水 艺术 感官 记忆 情感 纯粹 优雅 奢华 精致 传统 现代 和谐 平衡 美学 诗意 永恒 香道 芳香 水艺 术感 官记 忆情 感纯 粹优 雅奢 华精 致传 统现 代和 谐平 衡美 学诗 意永 恒';
   position: fixed;
@@ -25,7 +59,7 @@ body::before {
   font-size: 140px;
   line-height: 1.6;
   letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.06);
+  color: rgba(78, 48, 52, 0.05);
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -45,5 +79,3 @@ main {
   position: relative;
   z-index: 1;
 }
-
-
